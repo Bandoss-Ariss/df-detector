@@ -45,13 +45,13 @@ const Home = () => {
 
         {activeTab === 'image' && (
           <DragAndDropUpload
-            endpoint="https://fastapi-whatsapp-17290362188.us-central1.run.app/predict-image"
+            endpoint="/api/predict-image"
             onResult={handleResult}
           />
         )}
         {activeTab === 'video' && (
           <DragAndDropUpload
-            endpoint="https://fastapi-whatsapp-17290362188.us-central1.run.app/predict-video"
+            endpoint="/api/predict-videos"
             onResult={handleResult}
           />
         )}
