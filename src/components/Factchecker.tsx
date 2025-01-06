@@ -8,12 +8,15 @@ const Factchecker: React.FC<{ onResult: (result: any) => void }> = ({ onResult }
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Handle file upload
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       setFile(e.target.files[0]);
+      setInputText(''); // Clear text input if a file is selected
     }
   };
 
+  // Handle claim verification
   const handleVerifyClaim = async () => {
     if (!inputText && !file) {
       setError('Please provide a text claim or upload an image.');
@@ -51,17 +54,30 @@ const Factchecker: React.FC<{ onResult: (result: any) => void }> = ({ onResult }
   return (
     <div className={styles.factchecker}>
       <h2>Factchecker</h2>
+
+      {/* Text Input */}
       <textarea
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         placeholder="Enter a claim to verify..."
         className={styles.textArea}
+        disabled={!!file}
       ></textarea>
+
       <p>OR</p>
-      <input type="file" onChange={handleFileChange} className={styles.fileInput} />
+
+      {/* File Input */}
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+        className={styles.fileInput}
+      />
+
       <button onClick={handleVerifyClaim} disabled={uploading} className={styles.uploadButton}>
-        {uploading ? 'Verifying...' : 'Verify Claim'}
+        {uploading ? 'Verifying.Please hold on...' : 'Verify Claim'}
       </button>
+
       {error && <p className={styles.error}>{error}</p>}
     </div>
   );

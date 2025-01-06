@@ -72,7 +72,7 @@ const DragAndDropUpload: React.FC<DragAndDropUploadProps> = ({ endpoint, onResul
         <div className={styles.fileInfo}>
           <p>Selected file: {file.name}</p>
           <button onClick={handleFileUpload} disabled={uploading} className={styles.uploadButton}>
-            {uploading ? 'We are processing the video. This may take a while. Please Hold on:)...' : 'Submit'}
+            {uploading ? 'We are processing your media. This may take a while. Please Hold on:)...' : 'Submit'}
           </button>
         </div>
       )}
