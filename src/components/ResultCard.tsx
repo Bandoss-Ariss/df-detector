@@ -15,7 +15,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, type }) => {
     <div className={styles.resultCard}>
       <h2>Detection Result</h2>
       <p><strong>Type:</strong> {type === 'factchecker' ? 'Factchecker' : type === 'image' ? 'Image' : 'Video'}</p>
-      {result.confidence && <p><strong>Confidence:</strong> {result.confidence.toFixed(2)}%</p>}
+      {result.confidence && <p><strong>Confidence:</strong> {result.confidence.toFixed(2) * 100}%</p>}
       {result.prediction && <p><strong>Prediction:</strong> {result.prediction}</p>}
       {result.explanation && <p><strong>Explanation:</strong> {result.explanation}</p>}
 

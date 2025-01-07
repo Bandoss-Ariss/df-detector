@@ -61,3 +61,27 @@
     text-align: center;
   }
   
+  /* Responsive layout for mobile devices */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .imageSection {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .contentSection {
+      width: 100%;
+    }
+  
+    .logoImage {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
