@@ -12,8 +12,23 @@
     margin-bottom: 10px;
   }
   
-  .fileInput {
+  .uploadLabel {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .uploadLabel:hover {
+    background-color: #444;
+  }
+  
+  .fileInput {
+    display: none; /* Hide the default input field */
   }
   
   .uploadButton {
